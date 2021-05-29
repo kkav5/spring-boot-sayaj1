@@ -35,6 +35,12 @@ public class EDataAccessService implements EDao{
 
     @Override
     public Employee selectEmployeeById(int id) {
-        return null;
+        String sql = "SELECT id, f_name, l_name, address, phone FROM employee WHERE id = ?";
+        Employee emp = jdbcTemplate.queryForObject(sql, new Object[]{id}, ((resultSet, i) ->
+        {
+            return new Employee(resultSet.getInt("id"), resultSet.getString("f_name"), resultSet.getString("l_name"),resultSet.getString("address"), resultSet.getInt("phone"));
+
+        }));
+        return emp;
     }
 }
