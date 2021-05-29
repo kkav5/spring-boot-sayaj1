@@ -20,7 +20,8 @@ public class EDataAccessService implements EDao{
 
     @Override
     public int insertEmployee(int id, Employee employee) {
-        return 0;
+        String sql = "INSERT INTO employee (id, f_name, l_name, address, phone) VALUES (?, ?, ?, ?, ?)";
+        return jdbcTemplate.update(sql, new Object[]{id, employee.getF_name(), employee.getL_name(), employee.getAddress(), employee.getPhone()});
     }
 
     @Override
