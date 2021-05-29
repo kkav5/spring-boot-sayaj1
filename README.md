@@ -1,7 +1,7 @@
 # spring-boot-sayaj1
 
 
-First step would be connecting to a Postgres Database, that does not have any tables yet.
+First step would be connecting to a Postgres Database which does not have any tables yet.
 
 Then go into " ./sayaj/src/main/resources/META-INF " . There is a file "application.yml". This file contains the information to connect to the database. To change the file, after   "jdbc-postgresql:" add the address of your database. Change the information for "username:" and  "password:" according to your username and password. 
 
